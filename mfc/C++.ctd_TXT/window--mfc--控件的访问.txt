@@ -1,0 +1,11 @@
+控件的访问
+1.七种基本的访问
+2.通过全局变量
+3.view 分割视图的访问
+• MainFrm类中添加CSplitterWnd成员变量                     
+
+• 重写虚函数onCreateClient
+
+在虚函数onCreateClient中添加静态分割代码
+
+

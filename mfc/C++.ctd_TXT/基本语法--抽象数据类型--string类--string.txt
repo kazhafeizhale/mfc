@@ -1,0 +1,6 @@
+STRING
+string类的语法和平常的算术运算很像
+创建对象： string name;
+getline(cin,str)来从键盘输入值；
+用“+”来拼接，用==来比较。
+

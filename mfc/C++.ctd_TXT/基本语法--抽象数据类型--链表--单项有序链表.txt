@@ -1,0 +1,90 @@
+单项有序链表
+
+
+
+代码：
+
+---------------------------------------------------------------------------------------------------------------------------------
+typedef struct node
+{
+	struct node  *link;
+	int date;
+}NODE_STRUCT;
+---------------------------------------------------------------------------------------------------------------------------------
+
+第三行需要用：struct xxx定义
+
+插入函数：
+
+---------------------------------------------------------------------------------------------------------------------------------
+int insert_node(NODE_STRUCT **linkp,int newdate)
+{
+	NODE_STRUCT *current;
+	NODE_STRUCT *newnode;
+
+	while ((current=*linkp)!=NULL && current->date < newdate)
+	{
+		linkp = &(current->link);
+	}
+	
+	newnode = (NODE_STRUCT *)malloc(sizeof(NODE_STRUCT));
+	newnode->date = newdate;
+
+	newnode->link = current;
+
+	*linkp = newnode;
+	return 1;
+}
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+测试遍历函数
+
+---------------------------------------------------------------------------------------------------------------------------------
+int main()
+{
+	//操作
+	NODE_STRUCT *root = NULL;
+	insert_node(&root, 10);
+	insert_node(&root, 5);
+	insert_node(&root, 4);
+	insert_node(&root, 50);
+	insert_node(&root, 3);
+	insert_node(&root, 3);
+
+	NODE_STRUCT * current;
+	for(current = root;current != NULL; current = current->link)
+	{
+		printf("single value is %d \n",current->date);
+
+	}
+}
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+查找函数
+
+---------------------------------------------------------------------------------------------------------------------------------
+int find_node(NODE_STRUCT **linkp, int find_date)
+{
+	unsigned num = 0;
+	NODE_STRUCT *current;
+	
+	while ((current = *linkp) != NULL)
+	{
+		if (current->date == find_date)
+		{
+			num++;
+		}
+		linkp = &(current->link);
+	}
+	return num;
+}
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+

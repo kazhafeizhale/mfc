@@ -1,0 +1,19 @@
+进程
+https://blog.csdn.net/DLUTBruceZhang/article/details/9080157?utm_source=copy
+https://blog.csdn.net/DLUTBruceZhang/article/details/9058583
+
+https://blog.csdn.net/junbopengpeng/article/details/16830715
+
+https://blog.csdn.net/chance_yin/article/details/8943650
+
+总结：
+磁盘   虚拟内存空间   物理内存  进程 
+1.加载磁盘的exe文件，映射一个4GB的虚拟内存空间，数据段，代码段，堆，栈，文件映射（DLL）
+
+2.同一个动态链接库在物理内存中保留一份，映射到自己的虚拟内存中，当对其中的数据修改
+时，产生相应的复制内存，
+
+3.同一时间只有一个进程在运行，CPU只能访问一个虚拟内存空间
+
+4.虚拟内存技术是分页的，物理内存只存储了需要的页数据
+

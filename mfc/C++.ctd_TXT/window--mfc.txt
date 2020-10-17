@@ -1,0 +1,4 @@
+MFC
+G:\cherry
+笔记\mfcgetitem.md
+

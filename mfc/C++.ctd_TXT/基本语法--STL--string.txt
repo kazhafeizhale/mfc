@@ -1,0 +1,46 @@
+STRING
+操作总结：
+.date() size()
+< > ==
+insert()  push_back() pop_back 
+append() +
+ iterator []
+erase()
+replace()
+find()
+sort
+
+分割：
+substr()+find实现 或者用c语言 strtok()
+https://blog.csdn.net/qq_34634812/article/details/102407308
+
+---------------------------------------------------------------------------------------------------------------------------------
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+int main()
+{
+    //char str[]="a,b,c,d";
+    //如果输入是string要转成char数组[strcpy(buf,str.c_str())]
+    //或者用const_cast转换成char指针
+    string str="a,b,c,d";
+    const char *delim=",";
+    char *p=strtok(const_cast<char *>(str.c_str()),delim);
+    while(p)
+    {
+        cout<<p<<endl;
+        p=strtok(NULL,delim);
+    }
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ https://blog.csdn.net/weibo1230123/article/details/80177898 讲解strtok()
+ 网页总结的成员函数
+https://blog.csdn.net/qq_37941471/article/details/82107077
+http://c.biancheng.net/view/1441.html
+

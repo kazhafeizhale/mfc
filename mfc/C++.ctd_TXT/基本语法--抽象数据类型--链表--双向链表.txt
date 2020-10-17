@@ -1,0 +1,101 @@
+双向链表
+
+
+插入操作：
+
+传入指向根节点的指针
+current指针，next指针遍历操作
+
+current指向新节点，newnode指向next
+
+向后指针需要分情况，是否为跟节点，是否为尾部
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+typedef struct doublenode
+{
+	struct doublenode *fwd;
+	struct doublenode *bwd;
+	int date;
+}DOUBLE_NODE_STRUCT;
+
+int insert_double_node(DOUBLE_NODE_STRUCT *rootp,int value)
+{
+	DOUBLE_NODE_STRUCT *newDate;
+	DOUBLE_NODE_STRUCT *current;
+	DOUBLE_NODE_STRUCT *next;
+
+	for (current = rootp; (next = current->fwd) != NULL; current = next->fwd)
+	{
+		if (next->date == value)
+		{
+			return 0;
+		}
+		if(next->date > value)
+		{
+			break;
+		}
+	}
+	
+	newDate = (DOUBLE_NODE_STRUCT *)malloc(sizeof(DOUBLE_NODE_STRUCT));
+	if (newDate == NULL)
+	{
+		return -1;
+	}
+	newDate->date = value;
+
+	current->fwd = newDate;
+	newDate->fwd = next;
+
+	if (current == rootp)
+	{
+		newDate->bwd = NULL;
+	}
+	else
+	{
+		newDate->bwd = current;
+	}
+	if (next == NULL)
+	{
+		rootp->bwd = newDate;
+	}
+	else
+	{
+		next->bwd = newDate;
+	}
+	return 1;
+}
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+遍历操作
+
+---------------------------------------------------------------------------------------------------------------------------------
+	int iResult = true;
+	DOUBLE_NODE_STRUCT rootNode =
+	{
+		NULL,
+		NULL,
+		0
+	};
+	iResult = insert_double_node(&rootNode, 2);
+	iResult = insert_double_node(&rootNode, 4);
+	iResult = insert_double_node(&rootNode, 1);
+	iResult = insert_double_node(&rootNode, 6);
+	//正向
+	for (DOUBLE_NODE_STRUCT * current = &rootNode; current->fwd != NULL; current = current->fwd)
+	{
+		printf("%d\n",current->fwd->date);
+	}
+	//反向
+	for (DOUBLE_NODE_STRUCT *current = &rootNode; current->bwd != NULL; current = current->bwd)
+	{
+		printf("%d\n",current->bwd->date);
+	}
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+https://www.typingclub.com/sportal/program-3/281.play
+
+

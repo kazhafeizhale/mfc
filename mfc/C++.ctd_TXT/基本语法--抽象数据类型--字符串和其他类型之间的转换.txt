@@ -1,0 +1,17 @@
+字符串和其他类型之间的转换
+atoi()
+atol()
+atof()
+
+itoa()
+ltoa()
+ftoa()
+sprintf()
+sscanf()
+
+to_string()  
+assign() 
+通过 =
+c_str()然后调用c函数
+stringstream  流  #include <sstream>
+

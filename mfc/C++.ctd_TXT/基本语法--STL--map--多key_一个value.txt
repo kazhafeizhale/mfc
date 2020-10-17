@@ -1,0 +1,6 @@
+多KEY 一个VALUE
+G:\cherry笔记\mutilekeyMap.md
+https://blog.csdn.net/Lin_QC/article/details/104220929
+
+http://www.cppblog.com/yindf/archive/2009/03/20/77304.aspx
+

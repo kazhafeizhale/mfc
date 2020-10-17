@@ -1,0 +1,9 @@
+TYPEDEF
+typedef 的作用就是声明一种新的类型
+
+int a
+typedef int a;
+
+void *(*FUNC)(int)
+typedef void*(*FUNC)(int)
+

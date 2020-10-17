@@ -1,0 +1,18 @@
+追加文本
+
+---------------------------------------------------------------------------------------------------------------------------------
+void MainDlg::OnBnClickedButton1()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	int iLen;
+	CString strMsg("");
+	g_MainDlg->m_logEdit.GetWindowTextW(strMsg);
+	strMsg.Format(_T("%s\r\n%s"),strMsg, _T("hetong"));
+	//iLen = g_MainDlg->m_logEdit.GetWindowTextLength();
+	//g_MainDlg->m_logEdit.SetSel(iLen,iLen,TRUE);
+	//g_MainDlg->m_logEdit.ReplaceSel(strMsg, FALSE);
+	g_MainDlg->m_logEdit.SetWindowTextW(strMsg);
+}
+---------------------------------------------------------------------------------------------------------------------------------
+
+
