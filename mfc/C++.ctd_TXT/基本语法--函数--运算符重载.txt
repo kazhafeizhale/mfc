@@ -1,8 +1,0 @@
-运算符重载
-格式：
- operator op ()
-    例如：operator+(const  Time & t),重载+运算符。
-    
-    coding.operator+(fixing)
-    coding + fixing
-

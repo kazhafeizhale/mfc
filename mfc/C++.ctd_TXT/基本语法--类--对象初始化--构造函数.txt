@@ -1,8 +1,0 @@
-构造函数
-1. string   str("hetong"); 构造函数
-2. string str = string("hetong");
-3. string  *pstr = new string("hetong");
-4. string str = “hetong”  拷贝构造函数
-5. string str1 = str;  拷贝构造函数
-5. string str2; str2 = str1; = 重载
-

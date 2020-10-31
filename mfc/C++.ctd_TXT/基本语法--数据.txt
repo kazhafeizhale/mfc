@@ -1,9 +1,0 @@
-数据
-字面值：
-    整型字面值
-        char ,int ,long ,long long
-        enum
-    浮点型字面值
-        float , double , long double
-     
-

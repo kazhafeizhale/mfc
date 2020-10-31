@@ -1,5 +1,0 @@
-数字图像处理
-https://www.cnblogs.com/studylyn/p/6613278.html
-
-G:\c++学习\数字图像处理\代码\vc++杨淑莹图像处理
-
